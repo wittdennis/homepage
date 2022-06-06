@@ -1,25 +1,14 @@
 import type { Component } from 'solid-js';
 
-import logo from './logo.svg';
 import styles from './App.module.css';
+import FontAwesomeLink from './molecules/FontAwesomeLink';
 
 const App: Component = () => {
   return (
     <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+      <h1>Dennis Witt</h1>
+      <h3>Developer</h3>
+      <FontAwesomeLink identifier='fa-brands fa-github' url='https://github.com/wittdennis' openInNewTab={true} />
     </div>
   );
 };
