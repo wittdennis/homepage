@@ -27,8 +27,9 @@ steps:
     inputs:
       SonarCloud: SC
       organization: 'wittdennis'
-      projectKey: 'wittdennis_homepage'
-      projectName: 'DotnetEnvironment'
+      scannerMode: cli
+      cliProjectKey: 'wittdennis_homepage'
+      cliProjectName: 'homepage'      
 
   - task: Npm@1
     displayName: build
