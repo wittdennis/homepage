@@ -27,9 +27,11 @@ steps:
     inputs:
       SonarCloud: SC
       organization: 'wittdennis'
-      scannerMode: cli
+      scannerMode: 'CLI'
+      configMode: manual
       cliProjectKey: 'wittdennis_homepage'
-      cliProjectName: 'homepage'      
+      cliProjectName: 'homepage'
+      cliSources: 'src' 
 
   - task: Npm@1
     displayName: build
