@@ -1,0 +1,52 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+
+pr:
+  autoCancel: true
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: ubuntu-latest
+
+workspace:
+  clean: all
+
+steps:
+  - task: Npm@1
+    displayName: install dependencies
+    inputs:
+      command: install      
+
+  - task: SonarCloudPrepare@1
+    displayName: SonarCloud prepare
+    inputs:
+      SonarCloud: SC
+      organization: 'wittdennis'
+      projectKey: 'wittdennis_homepage'
+      projectName: 'DotnetEnvironment'
+
+  - task: Npm@1
+    displayName: build
+    inputs:
+      command: custom
+      customCommand: run build    
+
+  - task: SonarCloudAnalyze@1
+    displayName: SonarCloud analysis
+
+  - task: SonarCloudPublish@1
+    displayName: publish SonarCloud summary
+    inputs:
+      pollingTimeoutSec: '300'
+
+  - task: PublishBuildArtifacts@1
+    displayName: publish build artifact
+    inputs:
+      ArtifactName: drop
+      StoreAsTar: true
+      PathtoPublish: '**/dist/'
