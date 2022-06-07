@@ -22,16 +22,16 @@ steps:
     inputs:
       command: install      
 
-  - task: SonarCloudPrepare@1
-    displayName: SonarCloud prepare
-    inputs:
-      SonarCloud: SC
-      organization: 'wittdennis'
-      scannerMode: 'CLI'
-      configMode: manual
-      cliProjectKey: 'wittdennis_homepage'
-      cliProjectName: 'homepage'
-      cliSources: 'src' 
+  # - task: SonarCloudPrepare@1
+  #   displayName: SonarCloud prepare
+  #   inputs:
+  #     SonarCloud: SC
+  #     organization: 'wittdennis'
+  #     scannerMode: 'CLI'
+  #     configMode: manual
+  #     cliProjectKey: 'wittdennis_homepage'
+  #     cliProjectName: 'homepage'
+  #     cliSources: 'src' 
 
   - task: Npm@1
     displayName: build
@@ -39,13 +39,13 @@ steps:
       command: custom
       customCommand: run build    
 
-  - task: SonarCloudAnalyze@1
-    displayName: SonarCloud analysis
+  # - task: SonarCloudAnalyze@1
+  #   displayName: SonarCloud analysis
 
-  - task: SonarCloudPublish@1
-    displayName: publish SonarCloud summary
-    inputs:
-      pollingTimeoutSec: '300'
+  # - task: SonarCloudPublish@1
+  #   displayName: publish SonarCloud summary
+  #   inputs:
+  #     pollingTimeoutSec: '300'
 
   - task: PublishBuildArtifacts@1
     displayName: publish build artifact
