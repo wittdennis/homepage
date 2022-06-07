@@ -52,4 +52,4 @@ steps:
     inputs:
       ArtifactName: drop
       StoreAsTar: true
-      PathtoPublish: '**/dist/'
+      PathtoPublish: 'dist'
