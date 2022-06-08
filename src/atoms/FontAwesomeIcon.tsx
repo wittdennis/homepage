@@ -8,11 +8,9 @@ interface IFontAwesomeIconProps {
 }
 
 /** Renders a font awesome icon by its identifier */
-const FontAwesomeIcon: Component<IFontAwesomeIconProps> = (props: IFontAwesomeIconProps) =>  {
+const FontAwesomeIcon: Component<IFontAwesomeIconProps> = (props: IFontAwesomeIconProps) => {
     return (
-        <div>
-            <i class={props.identifier} />
-        </div>
+        <i class={props.identifier} />
     )
 }
 

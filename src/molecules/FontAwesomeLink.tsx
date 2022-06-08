@@ -1,5 +1,6 @@
 import type { Component } from 'solid-js';
 import FontAwesomeIcon from '../atoms/FontAwesomeIcon';
+import { css } from '@emotion/css';
 
 /** Props for a FontAwesomeLink */
 interface IFontAwesomeLinkProps {
@@ -12,12 +13,20 @@ interface IFontAwesomeLinkProps {
 }
 
 /** Link as a font awesome icon */
-const FontAwesomeLink: Component<IFontAwesomeLinkProps> = (props: IFontAwesomeLinkProps) => {
-    return (        
-        <a target={props.openInNewTab ? '_blank' : ''} rel={props.openInNewTab ? 'noopener noreferrer' : ''} href={props.url}>
+const FontAwesomeLink: Component<IFontAwesomeLinkProps> = (props: IFontAwesomeLinkProps) => (
+    <div className={css`
+            opacity: 0.5;
+            &:hover {
+                opacity: 1;
+            }
+        `}>
+        <a className={css`
+            color: black;
+        `}
+            target={props.openInNewTab ? '_blank' : ''} rel={props.openInNewTab ? 'noopener noreferrer' : ''} href={props.url}>
             <FontAwesomeIcon identifier={props.identifier} />
-        </a>                
-    )
-}
+        </a>
+    </div>
+)
 
 export default FontAwesomeLink;
