@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import FontAwesomeIcon from '../atoms/FontAwesomeIcon';
-import { css, cx } from '@emotion/css';
+import { css } from '@emotion/css';
 
 /** Props for a FontAwesomeLink */
 interface IFontAwesomeLinkProps {
