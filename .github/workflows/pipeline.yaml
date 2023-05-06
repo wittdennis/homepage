@@ -38,7 +38,7 @@ jobs:
       - uses: azure/setup-kubectl@v3
         name: install kubectl
         with:
-          version: 1.26.3
+          version: v1.26.3
 
       - name: k8s set cluster
         uses: azure/k8s-set-context@v3
