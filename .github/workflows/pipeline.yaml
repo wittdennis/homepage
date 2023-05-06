@@ -49,8 +49,8 @@ jobs:
 
       - name: set docker image
         env:
-          BRANCH_NAME: $GITHUB_REF_NAME
-          RUN_ID: $GITHUB_RUN_ID
+          BRANCH_NAME: ${{ github.ref_name }}
+          RUN_ID: ${{ github.run_id }}
           DOCKER_REPOSITORY: ${{ secrets.DOCKERHUB_USERNAME }}/homepage
         run: |
           set -e
