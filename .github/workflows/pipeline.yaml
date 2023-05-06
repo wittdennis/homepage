@@ -54,7 +54,7 @@ jobs:
           DOCKER_REPOSITORY: ${{ secrets.DOCKERHUB_USERNAME }}/homepage
         run: |
           set -e
-          yq -i '.spec.template.spec.containers[0].image = $DOCKER_REPOSITORY:$BRANCH_NAME-$RUN_ID' manifests/deployment.yaml
+          yq -i ".spec.template.spec.containers[0].image = \"$DOCKER_REPOSITORY:$BRANCH_NAME-$RUN_ID\"" manifests/deployment.yaml
 
       - uses: Azure/k8s-deploy@v4
         name: deploy homepage
