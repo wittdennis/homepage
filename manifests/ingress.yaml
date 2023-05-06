@@ -1,0 +1,85 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: homepage
+  namespace: personal
+  labels:
+    name: homepage
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/issuer: "letsencrypt"
+spec:
+  tls:
+    - hosts:
+        - derwitt.com
+        - www.derwitt.com
+      secretName: derwitt-com-tls
+    - hosts:
+        - derwitt.de
+        - www.derwitt.de
+      secretName: derwitt-de-tls
+    - hosts:
+        - derwitt.me
+        - www.derwitt.me
+      secretName: derwitt-me-tls
+  rules:
+    - host: derwitt.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: homepage
+                port:
+                  number: 80
+    - host: www.derwitt.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: homepage
+                port:
+                  number: 80
+    - host: derwitt.de
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: homepage
+                port:
+                  number: 80
+    - host: www.derwitt.de
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: homepage
+                port:
+                  number: 80
+    - host: derwitt.me
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: homepage
+                port:
+                  number: 80
+    - host: www.derwitt.me
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: homepage
+                port:
+                  number: 80
