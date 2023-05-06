@@ -45,7 +45,7 @@ jobs:
         with:
           method: service-account
           k8s-url: ${{ secrets.K8S_API_URL }}
-          k8s-secret: ${{ secrets.K8S_SERVICEACCOUNT_TOKEN }}
+          k8s-secret: ${{ secrets.K8S_SERVICEACCOUNT_SECRET }}
 
       - name: set docker image
         run: |
@@ -53,7 +53,9 @@ jobs:
           yq -i '.spec.template.spec.containers[0].image = ${{ secrets.DOCKERHUB_USERNAME }}/homepage:$GITHUB_REF_NAME-$GITHUB_RUN_ID' manifests/deployment.yaml
 
       - uses: Azure/k8s-deploy@v4
+        name: deploy homepage
         with:
           namespace: "personal"
+          action: deploy
           manifests: |
             manifests
