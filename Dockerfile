@@ -4,7 +4,7 @@ RUN corepack enable
 WORKDIR /app
 COPY package.json .
 COPY pnpm-lock.yaml .
-RUN pnpm install
+RUN pnpm install --ignore-scripts
 COPY . .
 RUN pnpm build
 
