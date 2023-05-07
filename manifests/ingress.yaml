@@ -12,16 +12,22 @@ spec:
   tls:
     - hosts:
         - derwitt.com
-        - www.derwitt.com
       secretName: derwitt-com-tls
     - hosts:
+        - www.derwitt.com
+      secretName: www-derwitt-com-tls
+    - hosts:
         - derwitt.de
-        - www.derwitt.de
       secretName: derwitt-de-tls
     - hosts:
+        - www.derwitt.de
+      secretName: www-derwitt-de-tls
+    - hosts:
         - derwitt.me
-        - www.derwitt.me
       secretName: derwitt-me-tls
+    - hosts:
+        - www.derwitt.me
+      secretName: www-derwitt-me-tls
   rules:
     - host: derwitt.com
       http:
