@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@emotion/css':
     specifier: ^11.9.0
@@ -26,7 +30,7 @@ devDependencies:
     version: 4.6.4
   vite:
     specifier: ^2.9.9
-    version: 2.9.9
+    version: 2.9.16
   vite-plugin-solid:
     specifier: ^2.2.6
     version: 2.2.6
@@ -1070,7 +1074,7 @@ packages:
       merge-anything: 5.0.2
       solid-js: 1.4.2
       solid-refresh: 0.4.0(solid-js@1.4.2)
-      vite: 2.9.9
+      vite: 2.9.16
     transitivePeerDependencies:
       - less
       - sass
@@ -1078,8 +1082,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite@2.9.9:
-    resolution: {integrity: sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==}
+  /vite@2.9.16:
+    resolution: {integrity: sha512-X+6q8KPyeuBvTQV8AVSnKDvXoBMnTx8zxh54sOwmmuOdxkjMmEJXH2UEchA+vTMps1xw9vL64uwJOWryULg7nA==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
