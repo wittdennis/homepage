@@ -1,0 +1,29 @@
+{
+    "name": "components",
+    "version": "0.0.1",
+    "description": "Nx Solid components library",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/packages/components/index.cjs",
+    "module": "./dist/packages/components/index.js",
+    "types": "./dist/packages/components/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/packages/components/index.js",
+            "require": "./dist/packages/components/index.cjs"
+        }
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.4.2",
+        "styled-components": "^6.0.7"
+    },
+    "devDependencies": {
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "solid-js": "^1.7.11"
+    },
+    "peerDependencies": {
+        "solid-js": "^1.7.11"
+    }
+}
