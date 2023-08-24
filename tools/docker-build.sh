@@ -11,7 +11,7 @@ if [ -x "$(command -v podman)" ]; then
 fi
 
 REPOSITORY_NAME="local/homepage"
-TAG="develop"
+TAG="latest"
 
 $CONTAINER_CMD build -t $REPOSITORY_NAME:$TAG -f "$SCRIPT_PATH/../Dockerfile" "$SCRIPT_PATH/.."
 if [ $LOCAL_REGISTRY=="Y" ]; then

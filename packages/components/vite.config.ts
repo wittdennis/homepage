@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import babel from 'vite-plugin-babel';
 
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import dts from 'vite-plugin-dts';
@@ -17,10 +18,10 @@ export default defineConfig({
       tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
       skipDiagnostics: true,
     }),
-    peerDepsExternal(),
+    babel(),
 
     nxViteTsPaths(),
-  ],  
+  ],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -41,7 +42,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: [],      
+      plugins: [peerDepsExternal()],
     },
     target: 'esnext',
   },

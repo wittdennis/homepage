@@ -21,12 +21,14 @@ jobs:
       - name: build and push image
         run: |
           set -e
+          TAG=$(echo $GITHUB_REF_NAME | sed 's|/|-|')
           docker buildx build \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/homepage:$GITHUB_REF_NAME \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/homepage:$GITHUB_REF_NAME-$GITHUB_RUN_ID \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/homepage:$TAG\
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/homepage:$TAG-$GITHUB_RUN_ID \
             --platform linux/amd64,linux/arm/v7,linux/arm64 \
             --push \
             .
+
   deploy:
     needs: docker-build
     runs-on: ubuntu-22.04
@@ -59,7 +61,7 @@ jobs:
       - uses: Azure/k8s-deploy@v4
         name: deploy homepage
         with:
-          namespace: "personal"
+          namespace: 'personal'
           action: deploy
           manifests: |
             manifests

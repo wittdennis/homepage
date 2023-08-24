@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { FontAwesomeIcon } from '../atoms/FontAwesomeIcon';
-import { styled } from 'styled-components';
+import { css } from '@emotion/css';
 
 /** Props for a FontAwesomeLink */
 interface IFontAwesomeLinkProps {
@@ -8,7 +8,7 @@ interface IFontAwesomeLinkProps {
   identifier: string;
   /** The url to link to */
   url: string;
-  /** Whether or not to open the page in a new tab  */
+  /** Whether or not to open the page in a new tab */
   openInNewTab?: boolean;
 }
 
@@ -16,20 +16,19 @@ interface IFontAwesomeLinkProps {
 export const FontAwesomeLink: Component<IFontAwesomeLinkProps> = (
   props: IFontAwesomeLinkProps
 ) => (
-  <Div>
-    <A
+  <div class={divClass}>
+    <a
+      class={aClass}
       target={props.openInNewTab ? '_blank' : ''}
       rel={props.openInNewTab ? 'noopener noreferrer' : ''}
       href={props.url}
     >
       <FontAwesomeIcon identifier={props.identifier} />
-    </A>
-  </Div>
+    </a>
+  </div>
 );
 
-export default FontAwesomeLink;
-
-const Div = styled.div`
+const divClass = css`
   opacity: 0.5;
 
   &:hover {
@@ -37,6 +36,6 @@ const Div = styled.div`
   }
 `;
 
-const A = styled.a`
+const aClass = css`
   color: black;
 `;
