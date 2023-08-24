@@ -3,9 +3,6 @@ FROM node:18-alpine3.17 AS build
 ENV PNPM_HOME /usr/bin/
 RUN corepack enable && pnpm install -g nx@latest
 WORKDIR /app
-# COPY package.json .
-# COPY pnpm-lock.yaml .
-# COPY pnpm-workspace.yaml .
 COPY . .
 RUN pnpm install --ignore-scripts
 RUN pnpm build
