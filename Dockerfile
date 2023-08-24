@@ -1,11 +1,12 @@
 # build environment
 FROM node:18-alpine3.17 AS build
-RUN apk add --update --no-cache python3 &&\
-    ln -sf python3 /usr/bin/python &&\
-    apk add --update --no-cache make
+RUN apk add --update --no-cache python3 make g++ &&\
+    ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 ENV PNPM_HOME /usr/bin/
-RUN corepack enable && pnpm install -g nx@latest
+RUN corepack enable &&\
+    corepack prepare pnpm@latest --activate &&\
+    pnpm install -g nx@latest
 WORKDIR /app
 COPY . .
 RUN pnpm install --ignore-scripts
