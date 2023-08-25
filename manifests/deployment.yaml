@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: homepage
-          image: local/homepage:latest
+          image: homepage:latest
           resources:
             limits:
               memory: "64Mi"
