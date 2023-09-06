@@ -1,5 +1,11 @@
 name: cicd-pipeline
 on: [push]
+
+env:
+  REGISTRY: docker.io
+  REGISTRY_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+  REGISTRY_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+
 jobs:
   docker-build:
     runs-on: ubuntu-22.04
@@ -18,15 +24,25 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: build and push image
+      - name: install podman
+        run: |
+          echo 'deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/unstable/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:unstable.list
+          curl -fsSL https://download.opensuse.org/repositories/devel:kubic:libcontainers:unstable/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/devel_kubic_libcontainers_unstable.gpg > /dev/null
+          sudo apt-get update
+          sudo apt-get install podman
+        shell: bash
+
+      - name: build image
         run: |
           set -e
-          docker buildx build \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/homepage:$GITHUB_REF_NAME \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/homepage:$GITHUB_REF_NAME-$GITHUB_RUN_ID \
-            --platform linux/amd64,linux/arm/v7,linux/arm64 \
-            --push \
-            .
+          export TAG=$(echo $GITHUB_REF_NAME | sed 's|/|-|g')
+
+          /bin/bash ./tools/docker-build.sh "$TAG" "$TAG-$GITHUB_RUN_ID"
+        shell: bash
+        env:
+          CONTAINER_REGISTRY: ${{ env.REGISTRY }}/${{ env.REGISTRY_USER }}
+          IMAGE_NAME: homepage
+
   deploy:
     needs: docker-build
     runs-on: ubuntu-22.04
@@ -59,7 +75,7 @@ jobs:
       - uses: Azure/k8s-deploy@v4
         name: deploy homepage
         with:
-          namespace: "personal"
+          namespace: 'personal'
           action: deploy
           manifests: |
             manifests

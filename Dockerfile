@@ -1,14 +1,11 @@
 # build environment
-FROM node:18-alpine3.17 AS build
-RUN corepack enable
+FROM denniswitt/nx:16.7.4-node-18.17.1-bookworm AS build
 WORKDIR /app
-COPY package.json .
-COPY pnpm-lock.yaml .
-RUN pnpm install --ignore-scripts
 COPY . .
+RUN pnpm install --ignore-scripts
 RUN pnpm build
 
-FROM nginx:1.24.0-alpine3.17-slim
-COPY --from=build /app/dist /usr/share/nginx/html
+FROM nginx:1.25.2-alpine3.18-slim
+COPY --from=build /app/dist/packages/main /usr/share/nginx/html
 EXPOSE 80
 ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
