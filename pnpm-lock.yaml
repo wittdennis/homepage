@@ -29,7 +29,7 @@ importers:
         version: 16.9.1(@types/node@20.7.0)(eslint@8.50.0)(nx@16.9.1)
       '@nx/vite':
         specifier: 16.9.1
-        version: 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.2)(vitest@0.34.5)
+        version: 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.3)(vitest@0.34.5)
       '@nxext/solid':
         specifier: ^16.7.0
         version: 16.7.0(@nx/cypress@16.9.1)(@nx/jest@16.9.1)(@nx/linter@16.9.1)(@nx/vite@16.9.1)
@@ -103,14 +103,14 @@ importers:
         specifier: ~5.2.2
         version: 5.2.2
       vite:
-        specifier: ~4.5.2
-        version: 4.5.2(@types/node@20.7.0)
+        specifier: ~4.5.3
+        version: 4.5.3(@types/node@20.7.0)
       vite-plugin-dts:
         specifier: ~3.6.0
-        version: 3.6.0(@types/node@20.7.0)(typescript@5.2.2)(vite@4.5.2)
+        version: 3.6.0(@types/node@20.7.0)(typescript@5.2.2)(vite@4.5.3)
       vite-plugin-solid:
         specifier: 2.7.0
-        version: 2.7.0(solid-js@1.7.12)(vite@4.5.2)
+        version: 2.7.0(solid-js@1.7.12)(vite@4.5.3)
       vitest:
         specifier: ~0.34.5
         version: 0.34.5(@vitest/ui@0.34.5)(jsdom@22.1.0)
@@ -132,7 +132,7 @@ importers:
         version: 1.7.11
       vite-plugin-babel:
         specifier: ^1.1.3
-        version: 1.1.3(@babel/core@7.23.0)(vite@4.5.2)
+        version: 1.1.3(@babel/core@7.23.0)(vite@4.5.3)
 
   packages/main:
     dependencies:
@@ -156,11 +156,11 @@ importers:
         specifier: ~5.1.6
         version: 5.1.6
       vite:
-        specifier: ~4.5.2
-        version: 4.5.2(@types/node@16.11.7)
+        specifier: ~4.5.3
+        version: 4.5.3(@types/node@16.11.7)
       vite-plugin-solid:
         specifier: 2.7.0
-        version: 2.7.0(solid-js@1.7.11)(vite@4.5.2)
+        version: 2.7.0(solid-js@1.7.11)(vite@4.5.3)
 
 packages:
 
@@ -2593,10 +2593,10 @@ packages:
       - debug
     dev: true
 
-  /@nrwl/vite@16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.2)(vitest@0.34.5):
+  /@nrwl/vite@16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.3)(vitest@0.34.5):
     resolution: {integrity: sha512-v7ttx8xIdlfsq4zW0JiyX3hi8btp8B4DlqlXQCTR9RWjEKnLEvRpv28vA50BIAVFk9JDjJhuBdelTKlETZzTew==}
     dependencies:
-      '@nx/vite': 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.2)(vitest@0.34.5)
+      '@nx/vite': 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.3)(vitest@0.34.5)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -2953,20 +2953,20 @@ packages:
     dev: true
     optional: true
 
-  /@nx/vite@16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.2)(vitest@0.34.5):
+  /@nx/vite@16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.3)(vitest@0.34.5):
     resolution: {integrity: sha512-+AlUq3XIefGE49KFAcXDO9P0rWGCouQrmTyZCD3O7q4Ym8CHpKc1cIRhrkRLV341Z7cLv0JXGIl7Bv5vLnnkEQ==}
     peerDependencies:
       vite: ^4.3.4
       vitest: '>=0.31.0 <1.0.0'
     dependencies:
-      '@nrwl/vite': 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.2)(vitest@0.34.5)
+      '@nrwl/vite': 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.3)(vitest@0.34.5)
       '@nx/devkit': 16.9.1(nx@16.9.1)
       '@nx/js': 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.2.2)
       '@swc/helpers': 0.5.2
       enquirer: 2.3.6
       tsconfig-paths: 4.2.0
-      vite: 4.5.2(@types/node@20.7.0)
+      vite: 4.5.3(@types/node@20.7.0)
       vitest: 0.34.5(@vitest/ui@0.34.5)(jsdom@22.1.0)
     transitivePeerDependencies:
       - '@babel/traverse'
@@ -3011,7 +3011,7 @@ packages:
       '@nx/devkit': 16.9.1(nx@16.9.1)
       '@nx/jest': 16.9.1(@types/node@20.7.0)(nx@16.9.1)(ts-node@10.9.1)(typescript@5.2.2)
       '@nx/linter': 16.9.1(@types/node@20.7.0)(eslint@8.50.0)(nx@16.9.1)
-      '@nx/vite': 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.2)(vitest@0.34.5)
+      '@nx/vite': 16.9.1(@types/node@20.7.0)(nx@16.9.1)(typescript@5.2.2)(vite@4.5.3)(vitest@0.34.5)
       nx: 16.9.1
       tslib: 2.6.2
       typescript: 5.1.6
@@ -8817,7 +8817,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.5.2(@types/node@20.7.0)
+      vite: 4.5.3(@types/node@20.7.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8829,17 +8829,17 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-babel@1.1.3(@babel/core@7.23.0)(vite@4.5.2):
+  /vite-plugin-babel@1.1.3(@babel/core@7.23.0)(vite@4.5.3):
     resolution: {integrity: sha512-WE8ORQm8530kj0geiDL1r/+P2MaU0b+5wL5E8Jq07aounFwRIUeJXziGiMr2DFQs78vaefB5GRKh257M8Z6gFQ==}
     peerDependencies:
       '@babel/core': ^7.0.0
       vite: ^2.7.0 || ^3.0.0 || ^4.0.0
     dependencies:
       '@babel/core': 7.23.0
-      vite: 4.5.2(@types/node@20.7.0)
+      vite: 4.5.3(@types/node@20.7.0)
     dev: true
 
-  /vite-plugin-dts@3.6.0(@types/node@20.7.0)(typescript@5.2.2)(vite@4.5.2):
+  /vite-plugin-dts@3.6.0(@types/node@20.7.0)(typescript@5.2.2)(vite@4.5.3):
     resolution: {integrity: sha512-doxhDRFJCZD2sGjIp4V800nm8Y19GvmwckjG5vYPuiqJ7OBjc9NlW1Vp9Gkyh2aXlUs1jTDRH/lxWfcsPLOQHg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -8855,7 +8855,7 @@ packages:
       debug: 4.3.4(supports-color@8.1.1)
       kolorist: 1.8.0
       typescript: 5.2.2
-      vite: 4.5.2(@types/node@20.7.0)
+      vite: 4.5.3(@types/node@20.7.0)
       vue-tsc: 1.8.15(typescript@5.2.2)
     transitivePeerDependencies:
       - '@types/node'
@@ -8863,7 +8863,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-solid@2.7.0(solid-js@1.7.11)(vite@4.5.2):
+  /vite-plugin-solid@2.7.0(solid-js@1.7.11)(vite@4.5.3):
     resolution: {integrity: sha512-avp/Jl5zOp/Itfo67xtDB2O61U7idviaIp4mLsjhCa13PjKNasz+IID0jYTyqUp9SFx6/PmBr6v4KgDppqompg==}
     peerDependencies:
       solid-js: ^1.7.2
@@ -8876,13 +8876,13 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.7.11
       solid-refresh: 0.5.3(solid-js@1.7.11)
-      vite: 4.5.2(@types/node@16.11.7)
-      vitefu: 0.2.4(vite@4.5.2)
+      vite: 4.5.3(@types/node@16.11.7)
+      vitefu: 0.2.4(vite@4.5.3)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite-plugin-solid@2.7.0(solid-js@1.7.12)(vite@4.5.2):
+  /vite-plugin-solid@2.7.0(solid-js@1.7.12)(vite@4.5.3):
     resolution: {integrity: sha512-avp/Jl5zOp/Itfo67xtDB2O61U7idviaIp4mLsjhCa13PjKNasz+IID0jYTyqUp9SFx6/PmBr6v4KgDppqompg==}
     peerDependencies:
       solid-js: ^1.7.2
@@ -8895,14 +8895,14 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.7.12
       solid-refresh: 0.5.3(solid-js@1.7.12)
-      vite: 4.5.2(@types/node@20.7.0)
-      vitefu: 0.2.4(vite@4.5.2)
+      vite: 4.5.3(@types/node@20.7.0)
+      vitefu: 0.2.4(vite@4.5.3)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@4.5.2(@types/node@16.11.7):
-    resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
+  /vite@4.5.3(@types/node@16.11.7):
+    resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -8937,8 +8937,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@4.5.2(@types/node@20.7.0):
-    resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
+  /vite@4.5.3(@types/node@20.7.0):
+    resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -8973,7 +8973,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitefu@0.2.4(vite@4.5.2):
+  /vitefu@0.2.4(vite@4.5.3):
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -8981,7 +8981,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.2(@types/node@16.11.7)
+      vite: 4.5.3(@types/node@16.11.7)
     dev: true
 
   /vitest@0.34.5(@vitest/ui@0.34.5)(jsdom@22.1.0):
@@ -9038,7 +9038,7 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 4.5.2(@types/node@20.7.0)
+      vite: 4.5.3(@types/node@20.7.0)
       vite-node: 0.34.5(@types/node@20.7.0)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
